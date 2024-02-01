@@ -1,13 +1,15 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
 
-const index = () => {
+import Restaurants from './restaurants';
+import { StatusBar } from 'expo-status-bar';
+
+const App = () => {
 	return (
-		<View>
-			<Text>index</Text>
-		</View>
+		<>
+			<Restaurants />
+			<StatusBar style="auto" />
+		</>
 	);
 };
 
-export default index;
-
-const styles = StyleSheet.create({});
+export default App;
