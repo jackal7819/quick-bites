@@ -17,7 +17,7 @@ const App = () => {
 		Lato_400Regular,
 	});
 
-	if (!oswaldLoaded && !latoLoaded) {
+	if (!latoLoaded || !oswaldLoaded) {
 		return null;
 	}
 
