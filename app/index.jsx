@@ -1,7 +1,6 @@
-import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
 
 import Restaurants from './restaurants';
-import { StatusBar } from 'expo-status-bar';
 
 const App = () => {
 	return (
