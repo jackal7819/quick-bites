@@ -2,7 +2,7 @@ import styled from 'styled-components/native';
 import { Searchbar } from 'react-native-paper';
 import { useState } from 'react';
 
-import RestaurantInfoCard from '../components/RestaurantInfoCard';
+import RestaurantInfo from '../components/RestaurantInfo';
 
 const StyledSafeAreaView = styled.SafeAreaView`
 	flex: 1;
@@ -10,13 +10,11 @@ const StyledSafeAreaView = styled.SafeAreaView`
 
 const RestaurantList = styled.View`
 	flex: 1;
-	padding: 16px;
-	background-color: #0000ff;
+	padding: ${({ theme }) => theme.space[3]};
 `;
 
 const SearchContainer = styled.View`
-	padding: 16px;
-	background-color: #fff;
+	padding: ${({ theme }) => theme.space[3]};
 `;
 
 const Restaurants = () => {
@@ -32,7 +30,7 @@ const Restaurants = () => {
 				/>
 			</SearchContainer>
 			<RestaurantList>
-				<RestaurantInfoCard />
+				<RestaurantInfo />
 			</RestaurantList>
 		</StyledSafeAreaView>
 	);

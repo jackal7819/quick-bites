@@ -2,19 +2,20 @@ import styled from 'styled-components/native';
 import { Card } from 'react-native-paper';
 
 const StyledCard = styled(Card)`
-	background-color: #fff;
+	background-color: ${({ theme }) => theme.colors.bg.primary};
 `;
 
-const StyledTitle = styled(Card.Title)`
-	padding: 20px;
+const StyledTitle = styled.Text`
+	padding: ${({ theme }) => theme.space[3]};
+	color: ${({ theme }) => theme.colors.ui.primary};
 `;
 
 const StyledCover = styled(Card.Cover)`
-	padding: 20px;
-	background-color: #fff;
+	padding: ${({ theme }) => theme.space[3]};
+	background-color: ${({ theme }) => theme.colors.bg.primary};
 `;
 
-const RestaurantInfoCard = ({ restaurant = {} }) => {
+const RestaurantInfo = ({ restaurant = {} }) => {
 	const {
 		name = `McDonald's`,
 		icon,
@@ -29,9 +30,9 @@ const RestaurantInfoCard = ({ restaurant = {} }) => {
 	return (
 		<StyledCard elevation={5}>
 			<StyledCover key={name} source={{ uri: photos[0] }} />
-			<StyledTitle title={name} subtitle={address} />
+			<StyledTitle>{name}</StyledTitle>
 		</StyledCard>
 	);
 };
 
-export default RestaurantInfoCard;
+export default RestaurantInfo;
