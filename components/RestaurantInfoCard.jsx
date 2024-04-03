@@ -1,7 +1,7 @@
 import { Avatar, Button, Card, Text } from 'react-native-paper';
 import { StyleSheet, View } from 'react-native';
 
-const RestaurantInfo = ({ restaurant = {} }) => {
+const RestaurantInfoCard = ({ restaurant = {} }) => {
 	const {
 		name = `McDonald's`,
 		icon,
@@ -34,4 +34,4 @@ const styles = StyleSheet.create({
 	},
 });
 
-export default RestaurantInfo;
+export default RestaurantInfoCard;
