@@ -8,6 +8,7 @@ const StyledCard = styled(Card)`
 const StyledTitle = styled.Text`
 	padding: ${({ theme }) => theme.space[3]};
 	color: ${({ theme }) => theme.colors.ui.primary};
+	font-family: ${({ theme }) => theme.fonts.body};
 `;
 
 const StyledCover = styled(Card.Cover)`
