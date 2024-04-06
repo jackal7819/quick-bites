@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 import { Card } from 'react-native-paper';
-import { Image, Text, View } from 'react-native';
+import { Image, Text } from 'react-native';
 import { SvgXml } from 'react-native-svg';
 
 import Spacer from './Spacer';
@@ -85,15 +85,17 @@ const RestaurantInfo = ({ restaurant = {} }) => {
 								CLOSED TEMPORARILY
 							</Text>
 						)}
-						<Spacer variant="left.large" />
-						{isOpenNow && (
-							<SvgXml xml={open} width={20} height={20} />
-						)}
-						<Spacer variant="left.large" />
-						<Image
-							style={{ width: 15, height: 15 }}
-							source={{ uri: icon }}
-						/>
+						<Spacer position="left" size="large">
+							{isOpenNow && (
+								<SvgXml xml={open} width={20} height={20} />
+							)}
+						</Spacer>
+						<Spacer position="left" size="large">
+							<Image
+								style={{ width: 15, height: 15 }}
+								source={{ uri: icon }}
+							/>
+						</Spacer>
 					</SectionEnd>
 				</IconsContainer>
 				<StyledAddress>{address}</StyledAddress>
