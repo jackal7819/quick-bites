@@ -1,53 +1,9 @@
-import styled from 'styled-components/native';
 import { Card } from 'react-native-paper';
-import { Image, Text } from 'react-native';
+import { Image, Text, View } from 'react-native';
 import { SvgXml } from 'react-native-svg';
 
-import Spacer from './Spacer';
 import open from '../assets/images/open';
 import star from '../assets/images/star';
-
-const StyledCard = styled(Card)`
-	background-color: ${({ theme }) => theme.colors.bg.primary};
-`;
-
-const StyledTitle = styled.Text`
-	color: ${({ theme }) => theme.colors.ui.primary};
-	font-family: ${({ theme }) => theme.fonts.heading};
-	font-size: ${({ theme }) => theme.fontSizes.body};
-`;
-
-const StyledAddress = styled.Text`
-	font-family: ${({ theme }) => theme.fonts.body};
-	font-size: ${({ theme }) => theme.fontSizes.caption};
-`;
-
-const StyledCover = styled(Card.Cover)`
-	padding: ${({ theme }) => theme.space[3]};
-	background-color: ${({ theme }) => theme.colors.bg.primary};
-`;
-
-const Info = styled.View`
-	padding: ${({ theme }) => theme.space[3]};
-`;
-
-const Rating = styled.View`
-	flex-direction: row;
-`;
-
-const IconsContainer = styled.View`
-	flex-direction: row;
-	align-items: center;
-	padding-top: ${({ theme }) => theme.space[2]};
-	padding-bottom: ${({ theme }) => theme.space[2]};
-`;
-
-const SectionEnd = styled.View`
-	flex: 1;
-	flex-direction: row;
-	align-items: center;
-	justify-content: flex-end;
-`;
 
 const RestaurantInfo = ({ restaurant = {} }) => {
 	const {
@@ -64,12 +20,17 @@ const RestaurantInfo = ({ restaurant = {} }) => {
 
 	const ratingArray = Array.from(new Array(Math.floor(rating)));
 	return (
-		<StyledCard elevation={5}>
-			<StyledCover key={name} source={{ uri: photos[0] }} />
-			<Info>
-				<StyledTitle>{name}</StyledTitle>
-				<IconsContainer>
-					<Rating>
+		<Card elevation={5} className="p-3 bg-slate-100">
+			{/* CARD COVER */}
+			<Card.Cover key={name} source={{ uri: photos[0] }} />
+			{/* TEXT BLOCK */}
+			<View className="gap-3 pt-5 pb-3">
+				{/* TITLE */}
+				<Text className="text-lg text-slate-900 font-oswald">{name}</Text>
+				{/* INFO */}
+				<View className="flex-row justify-between">
+					{/* RATING */}
+					<View className="flex-row items-center">
 						{ratingArray.map((_, index) => (
 							<SvgXml
 								xml={star}
@@ -78,29 +39,22 @@ const RestaurantInfo = ({ restaurant = {} }) => {
 								key={index}
 							/>
 						))}
-					</Rating>
-					<SectionEnd>
+					</View>
+					{/* OPEN/CLOSED TEMPORARILY */}
+					<View className="flex-row items-center gap-3">
 						{isClosedTemporarily && (
-							<Text variant="label" style={{ color: 'red' }}>
+							<Text className="text-red-500 font-lato">
 								CLOSED TEMPORARILY
 							</Text>
 						)}
-						<Spacer position="left" size="large">
-							{isOpenNow && (
-								<SvgXml xml={open} width={20} height={20} />
-							)}
-						</Spacer>
-						<Spacer position="left" size="large">
-							<Image
-								style={{ width: 15, height: 15 }}
-								source={{ uri: icon }}
-							/>
-						</Spacer>
-					</SectionEnd>
-				</IconsContainer>
-				<StyledAddress>{address}</StyledAddress>
-			</Info>
-		</StyledCard>
+						{isOpenNow && <SvgXml xml={open} className="w-5 h-5" />}
+						<Image source={{ uri: icon }} className="w-4 h-4" />
+					</View>
+				</View>
+				{/* ADDRESS */}
+				<Text>{address}</Text>
+			</View>
+		</Card>
 	);
 };
 

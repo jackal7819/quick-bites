@@ -1,38 +1,27 @@
-import styled from 'styled-components/native';
+import { SafeAreaView, View } from 'react-native'
 import { Searchbar } from 'react-native-paper';
 import { useState } from 'react';
 
 import RestaurantInfo from '../components/RestaurantInfo';
 
-const StyledSafeAreaView = styled.SafeAreaView`
-	flex: 1;
-`;
-
-const RestaurantList = styled.View`
-	flex: 1;
-	padding: ${({ theme }) => theme.space[3]};
-`;
-
-const SearchContainer = styled.View`
-	padding: ${({ theme }) => theme.space[3]};
-`;
-
 const Restaurants = () => {
 	const [searchQuery, setSearchQuery] = useState('');
 
 	return (
-		<StyledSafeAreaView>
-			<SearchContainer>
+		<SafeAreaView className="flex-1 font-[Oswald_400Regular]">
+			{/* SEARCHBAR */}
+			<View className="p-5">
 				<Searchbar
 					placeholder="Search"
 					onChangeText={setSearchQuery}
 					value={searchQuery}
 				/>
-			</SearchContainer>
-			<RestaurantList>
+			</View>
+			{/* RESTAURANT LIST */}
+			<View className="flex-1 p-5">
 				<RestaurantInfo />
-			</RestaurantList>
-		</StyledSafeAreaView>
+			</View>
+		</SafeAreaView>
 	);
 };
 

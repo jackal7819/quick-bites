@@ -1,13 +1,14 @@
-import { Lato_400Regular, useFonts as useLato } from '@expo-google-fonts/lato';
+import {
+	Lato_400Regular,
+	useFonts as useLato,
+} from '@expo-google-fonts/lato';
 import {
 	Oswald_400Regular,
 	useFonts as useOswald,
 } from '@expo-google-fonts/oswald';
 import { StatusBar } from 'expo-status-bar';
-import { ThemeProvider } from 'styled-components/native';
 
 import Restaurants from './restaurants';
-import { theme } from '../theme';
 
 const App = () => {
 	const [oswaldLoaded] = useOswald({
@@ -23,9 +24,7 @@ const App = () => {
 
 	return (
 		<>
-			<ThemeProvider theme={theme}>
-				<Restaurants />
-			</ThemeProvider>
+			<Restaurants />
 			<StatusBar style="auto" />
 		</>
 	);
