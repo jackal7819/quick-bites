@@ -5,7 +5,7 @@ import {
 } from '@expo-google-fonts/oswald';
 import { StatusBar } from 'expo-status-bar';
 
-import RestaurantList from '../components/RestaurantList';
+import RestaurantList from '../../components/RestaurantList';
 
 const App = () => {
 	const [oswaldLoaded] = useOswald({

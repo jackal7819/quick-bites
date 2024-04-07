@@ -22,7 +22,7 @@ const RestaurantList = () => {
 				data={[{ name: 1 }, { name: 2 }, { name: 3 }]}
 				renderItem={() => <RestaurantInfo />}
 				keyExtractor={(item) => item.name}
-				className="p-5"
+				className="px-5 pb-5 mt-5"
 			/>
 		</SafeAreaView>
 	);
