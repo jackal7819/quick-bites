@@ -20,7 +20,7 @@ const RestaurantInfo = ({ restaurant = {} }) => {
 
 	const ratingArray = Array.from(new Array(Math.floor(rating)));
 	return (
-		<Card elevation={5} className="p-3 bg-slate-100">
+		<Card elevation={1} className="p-3 mb-5 rounded-3xl bg-violet-50">
 			{/* CARD COVER */}
 			<Card.Cover key={name} source={{ uri: photos[0] }} />
 			{/* TEXT BLOCK */}
@@ -43,7 +43,7 @@ const RestaurantInfo = ({ restaurant = {} }) => {
 					{/* OPEN/CLOSED TEMPORARILY */}
 					<View className="flex-row items-center gap-3">
 						{isClosedTemporarily && (
-							<Text className="text-red-500 font-lato">
+							<Text className="text-red-500 font-oswald">
 								CLOSED TEMPORARILY
 							</Text>
 						)}
