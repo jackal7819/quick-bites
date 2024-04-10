@@ -1,8 +1,9 @@
-import { useState } from 'react';
 import { FlatList, SafeAreaView, View } from 'react-native';
 import { Searchbar } from 'react-native-paper';
+import { useState } from 'react';
 
 import RestaurantInfo from './RestaurantInfo';
+import { restaurants } from '../data';
 
 const RestaurantList = () => {
 	const [searchQuery, setSearchQuery] = useState('');
@@ -19,8 +20,8 @@ const RestaurantList = () => {
 			</View>
 			{/* RESTAURANT LIST */}
 			<FlatList
-				data={[{ name: 1 }, { name: 2 }, { name: 3 }]}
-				renderItem={() => <RestaurantInfo />}
+				data={restaurants}
+				renderItem={({ item }) => <RestaurantInfo restaurant={item} />}
 				keyExtractor={(item) => item.name}
 				className="px-5 pb-5 mt-5"
 			/>
