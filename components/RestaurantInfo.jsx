@@ -5,7 +5,7 @@ import { Link } from 'expo-router';
 import open from '../assets/images/open';
 import star from '../assets/images/star';
 
-const RestaurantInfo = ({ restaurant = {} }) => {
+const RestaurantInfo = ({ restaurant = {}, rounded, mb }) => {
 	const {
 		name = `McDonald's`,
 		icon = 'https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png',
@@ -24,7 +24,7 @@ const RestaurantInfo = ({ restaurant = {} }) => {
 			<Pressable>
 				<Card
 					elevation={1}
-					className="p-3 mb-5 rounded-3xl bg-violet-50"
+					className={`p-3 mb-${mb} rounded-${rounded} bg-orange-50`}
 				>
 					{/* CARD COVER */}
 					<Card.Cover key={name} source={{ uri: photos[0] }} />

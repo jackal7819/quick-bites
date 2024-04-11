@@ -7,15 +7,15 @@ import { restaurants } from '../data';
 
 const RestaurantList = () => {
 	const [searchQuery, setSearchQuery] = useState('');
-  const [filteredRestaurants, setFilteredRestaurants] = useState(restaurants);
+	const [filteredRestaurants, setFilteredRestaurants] = useState(restaurants);
 
-  const handleSearch = (text) => {
-    const filtered = restaurants.filter((restaurant) =>
-      restaurant.name.toLowerCase().includes(text.toLowerCase())
-    );
-    setFilteredRestaurants(filtered);
-    setSearchQuery(text);
-  };
+	const handleSearch = (text) => {
+		const filtered = restaurants.filter((restaurant) =>
+			restaurant.name.toLowerCase().includes(text.toLowerCase()),
+		);
+		setFilteredRestaurants(filtered);
+		setSearchQuery(text);
+	};
 
 	return (
 		<SafeAreaView className="flex-1 font-[Oswald_400Regular]">
@@ -30,7 +30,9 @@ const RestaurantList = () => {
 			{/* RESTAURANT LIST */}
 			<FlatList
 				data={filteredRestaurants}
-				renderItem={({ item }) => <RestaurantInfo restaurant={item} />}
+				renderItem={({ item }) => (
+					<RestaurantInfo restaurant={item} rounded="3xl" mb="5" />
+				)}
 				keyExtractor={(item) => item.name}
 				className="px-5 pb-5 mt-5"
 			/>
