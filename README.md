@@ -1,25 +1,21 @@
-# React Native Project - Quick Bites
+# Quick Bites
 
-## Overview
+Quick Bites is a simple application for displaying fake restaurants in Florida that helps users quickly find and learn about restaurants.
 
-Quick Bites
+## Functionality
 
-## Full Description
-
-Quick Bites
+- Viewing a list of restaurants in Florida
+- Viewing a map with the locations of restaurants
+- Detailed information about each restaurant
 
 ## Technologies
 
--   **React Native**: A framework for developing mobile applications using JavaScript and React.
--   **Expo Metro Runtime**: Used for optimization and management of React Native application operations.
--   **Expo SDK**: A toolkit and services for developing and deploying mobile applications.
--   **Expo Keep Awake**: Allows control of screen activity during application usage.
--   **Expo Status Bar**: Used to manage the status bar in the mobile application.
--   **React**: The latest version of the React library for interface development.
--   **React DOM**: Used for React interaction with the DOM tree.
--   **React Native Paper**: Components for React Native following the Google Material design.
--   **React Native Web**: Enables the use of React Native code for web development.
-
-## Conclusion
-
-Quick Bites
+- **React Native**: A framework for developing mobile apps using JavaScript and React.
+  
+- **Expo**: A set of tools and services for developing mobile apps using React Native.
+  
+- **React Navigation**: A library for navigating between screens and creating navigation structures in React Native apps.
+  
+- **React Native Maps**: Components for displaying and working with maps in React Native apps.
+  
+- **Tailwind CSS**: A CSS framework that allows for quick and convenient styling of web and mobile apps using classes.

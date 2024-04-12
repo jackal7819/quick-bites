@@ -18,7 +18,7 @@ const RestaurantList = () => {
 	};
 
 	return (
-		<SafeAreaView className="flex-1 font-[Oswald_400Regular]">
+		<SafeAreaView className="flex-1 font-oswald">
 			{/* SEARCHBAR */}
 			<View className="p-5 pb-0">
 				<Searchbar
@@ -31,7 +31,7 @@ const RestaurantList = () => {
 			<FlatList
 				data={filteredRestaurants}
 				renderItem={({ item }) => (
-					<RestaurantInfo restaurant={item} rounded="3xl" mb="5" />
+					<RestaurantInfo restaurant={item} rounded="3xl" mb="3" />
 				)}
 				keyExtractor={(item) => item.name}
 				className="px-5 pb-5 mt-5"

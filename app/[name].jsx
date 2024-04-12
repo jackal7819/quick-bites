@@ -1,6 +1,5 @@
 import { List } from 'react-native-paper';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { ScrollView, Text, View } from 'react-native';
+import { ScrollView } from 'react-native';
 import { Stack, useLocalSearchParams } from 'expo-router';
 import { useState } from 'react';
 

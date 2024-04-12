@@ -1,7 +1,7 @@
-import MapView, { Marker } from 'react-native-maps';
-import { Dimensions } from 'react-native';
-import { restaurants } from '../../data'
-
+import MapView, { Marker, Callout } from 'react-native-maps';
+import { Dimensions, Image, Platform, Pressable, Text, View } from 'react-native';
+import { restaurants } from '../../data';
+import { WebView } from 'react-native-webview';
 const Screen = Dimensions.get('window');
 
 const ASPECT_RATIO = Screen.width / Screen.height;
@@ -16,6 +16,8 @@ const INITIAL_POSITION = {
 };
 
 const MapScreen = () => {
+	const ImageView = Platform.OS === 'android' ? WebView : Image;
+
 	return (
 		<MapView className="flex-1" initialRegion={INITIAL_POSITION} liteMode>
 			{restaurants.map((restaurant) => (
@@ -26,7 +28,19 @@ const MapScreen = () => {
 						longitude: restaurant.longitude,
 					}}
 					title={restaurant.name}
-				/>
+				>
+					<Callout>
+						<View className="items-center p-1 rounded-xl">
+							<ImageView
+								source={{ uri: restaurant.photos[0] }}
+								className="w-40 h-20 rounded-xl"
+							/>
+							<Text className="text-center uppercase font-oswald">
+								{restaurant.name}
+							</Text>
+            </View>
+					</Callout>
+				</Marker>
 			))}
 		</MapView>
 	);
